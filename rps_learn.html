@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Leap Motion Rock Paper Scissors</title>
@@ -11,15 +11,21 @@
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="js/rps_learn.js"></script>
 </head>
-<body>
-  <div class="container">
+<body class="h-100">
+  <div class="container h-100">
     <h1>Leap Motion RPS Learn</h1>
-    <div class="row">
+    <button id="startLearnButton">Start Learning</button>
+    <div class="row h-75">
       <div class="col-md-12">
         <p id="message">
           DENKEN <電拳>
         </p>
       </div>
+    </div>
+    <div class="row h-25">
+      <p id="infoString">
+        Infomation
+      </p>
     </div>
   </div>
 </body>
