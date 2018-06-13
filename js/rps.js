@@ -63,7 +63,6 @@ Leap.loop(controllerOptions, function(frame) {
   var pointableOutput = document.getElementById("pointableData");
   var pointableString = "";
   var resultOutput = document.getElementById("resultData");
-    var resultString = "";
   var $arrayExtend = [];
   if (frame.pointables.length > 0) {
     var fingerTypeMap = ["Thumb", "Index finger", "Middle finger", "Ring finger", "Pinky finger"];
@@ -95,19 +94,19 @@ Leap.loop(controllerOptions, function(frame) {
 
     if(frame.pointables[0].extended == true && frame.pointables[1].extended == true && frame.pointables[2].extended == true && frame.pointables[3].extended == true && frame.pointables[4].extended == true)
     {
-      resultString += "パー";
+      resultOutput.innerHTML = "<img src='img/pa.png' width=600/>"
     }
     else if(frame.pointables[0].extended == false && frame.pointables[1].extended == true && frame.pointables[2].extended == true && frame.pointables[3].extended == false && frame.pointables[4].extended == false)
     {
-      resultString += "チョキ";
+      resultOutput.innerHTML = "<img src='img/choki.png' width=600/>"
     }
     else if(frame.pointables[0].extended == false && frame.pointables[1].extended == false && frame.pointables[2].extended == false && frame.pointables[3].extended == false && frame.pointables[4].extended == false)
     {
-      resultString += "グー";
+      resultOutput.innerHTML = "<img src='img/gu.png' width=600/>"
     }
     else
     {
-      resultString += "わからぬ";
+      resultOutput.innerHTML = "<p style='font-size:200px'>?</p>"
     }
   }
   else {
@@ -115,7 +114,6 @@ Leap.loop(controllerOptions, function(frame) {
   }
 
   pointableOutput.innerHTML = pointableString;
-  resultOutput.innerHTML = resultString;
 
   // Store frame for motion functions
   previousFrame = frame;

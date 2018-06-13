@@ -6,29 +6,21 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/rps.css" />
   <script src="node_modules/leapjs/leap-0.6.4.min.js"></script>
-  <script src="node_modules/popper.js/dist/popper.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="js/rps_learn.js"></script>
-  <style>
-  #main {
-    text-align:center;
-  }
-  #message {
-    display:inline-block;
-    vertical-align: middle;
-    line-height:normal;
-    font-size: 150px;
-    font-family: sans-serif;
-  }
-  </style>
 </head>
 <body>
-  <h1>Leap Motion RPS Learn</h1>
-  <div id="container">
-    <p id="message">
-      DENKEN <電拳>
-    </p>
+  <div class="container">
+    <h1>Leap Motion RPS Learn</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <p id="message">
+          DENKEN <電拳>
+        </p>
+      </div>
+    </div>
   </div>
 </body>
 </html>
