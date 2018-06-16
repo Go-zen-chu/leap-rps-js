@@ -29,6 +29,8 @@ $(document).ready(function(){
       return;
     }
 
+    leapData.push(frame);
+
     $("#infoString").html("Frame ID: " + frame.id  + "<br />"
       + "Timestamp: " + frame.timestamp + " &micro;s<br />"
       + "Hands: " + frame.hands.length + "<br />"
@@ -41,6 +43,7 @@ $(document).ready(function(){
 
   function finalizeData() {
     isMeasuring = false;
+    dumpByJSON(leapData);
   }
 
   function startLearn(){
@@ -54,4 +57,18 @@ $(document).ready(function(){
     setTimeout(getData, 3000);
     setTimeout(finalizeData, 4000);
   }
+
+
+  function dumpByJSON(obj) {
+    const aElem = document.createElement('a');
+
+    aElem.href = `data:application/x-json;base64,${btoa(JSON.stringify(obj))}`;
+    aElem.download = 'dump.json';
+    aElem.style.display = 'none';
+
+    document.documentElement.appendChild(aElem);
+    aElem.click();
+  }
+
+  const leapData = [];
 });
